@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'GL';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GM';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+    font-display: swap;
+}
+
+:root {
+    --colorGreen: #cedfc3;
+    --colorDGreen: #647367;
+    --colorBg: #f8f8e7;
+    --colorGBg: #d6e3ca;
+    --colorBtn: #ce5561;
+    --bodyc: #474747;
+}
+
+body {
+    font-family: 'GM';
+    color: var(--bodyc);
+}
+
+.box {
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    background-color: #000;
+    transition: .5s;
+}
+
+.box1 {
+    top: 0;
+    left: 0;
+}
+
+.box1:hover,
+.box4:hover {
+    width: 100%;
+}
+
+.box2:hover,
+.box3:hover {
+    height: 100%;
+}
+
+.box2 {
+    top: 0;
+    right: 0;
+}
+
+.box3 {
+    bottom: 0;
+    left: 0;
+}
+
+.box4 {
+    bottom: 0;
+    right: 0;
+}
+
+/* .center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+ */
+.center {
+    width: 5rem;
+    height: 5rem;
+    background-color: yellow;
+    border-radius: 50%;
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+}
+
+/* .center:hover {
+    width: 100%;
+    height: 100%;
+} */

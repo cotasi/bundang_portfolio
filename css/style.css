@@ -50,32 +50,40 @@ body{
     background-color: #474747;
     color: #fff;
     display: flex;
-    text-align: center;
     justify-content: center;
     height: 100vh;
     align-items: center;
     white-space: nowrap;
+    width: 50%;
 
 }
 
 p {
-    transform: rotate(0deg);
+    transform: rotate(90deg);
 }
 
 br {
-    display: block;
+    display: none;
 }
 
 @media screen and (max-width: 1024px) {
     .bb {
-        width: 50%;
+        width: auto;
+        text-align: center;
     }
 
     p {
-        transform: rotate(90deg);
+        transform: rotate(0deg);
+        font-size: 3vw;
     }
 
     br {
-        display: none;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    p {
+        font-size: 20px;
     }
 }
