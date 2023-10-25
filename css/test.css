@@ -1,0 +1,29 @@
+.box {
+    width: 15rem;
+    height: 5rem;
+    border: 1px solid black;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    line-height: 5rem;
+    background-color: #fff;
+    transition: all .4s;
+}
+
+.box::after {
+    content:'언어';
+    font-size: 3rem;
+}
+
+.box:hover {
+    background-color: #000;
+}
+
+.box:hover::after {
+    content:'한국어';
+    color: white;
+}
