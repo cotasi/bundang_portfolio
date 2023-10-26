@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+    <style>
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        header {
+            background-color:aquamarine;
+            border-bottom: 1px solid #222;
+            padding: 2rem 0;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .jcb {
+            justify-content: space-between;
+        }
+
+        .aic {
+            align-items: center;
+        }
+
+        header h1 {
+            height: 2rem;
+            background-color: red;
+        }
+
+        header h1 img {
+            height: 100%;
+        }
+
+        header h1:hover img {
+            display: none;
+        }
+
+        header h1:hover {
+            text-align: center;
+        }
+
+        header h1:hover::before {
+            content:'로고 있던 자리';
+        }
+
+        #gnb li a {
+            padding: 0 0 0 1rem;
+            background-color: orange;
+        }
+
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container d-flex jcb aic">
+            <h1><a href="#"><img src="https://cdn.imweb.me/thumbnail/20210824/9f4885d0d2739.png" alt="logo"></a></h1>
+            <nav>
+                <ul id="gnb" class="d-flex">
+                    <li><a href="#">WE</a></li>
+                    <li><a href="#">MAKE IT</a></li>
+                    <li><a href="#">EASY</a></li>
+                    <li><a href="#">REFERENCE</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  
+</body>
+</html>
