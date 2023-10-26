@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>seveneleven</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            height: 100vh;
+            position: relative;
+        }
+
+        .wrap {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .wrap button.familysite {
+            position: relative;
+            background: transparent;
+            border: 1px solid gray;
+            width: 20vw;
+            padding: .4rem 0;
+            padding-left: 1rem;
+            text-align: left;
+
+        }
+
+        .wrap button.familysite::after {
+            content: "\F282";
+            font-family: bootstrap-icons !important;
+            vertical-align: middle;
+            position: absolute;
+            right: 1rem;
+        }
+
+        .wrap a {
+            background-color: #484e53;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <button type="submit" class="familysite">FAMILY SITE</button>
+            <a href="#">GO</a>
+        </div>
+    </div>
+</body>
+</html>
