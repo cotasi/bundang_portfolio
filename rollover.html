@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롤오버&가상선택자&포지션</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .d-flex {
+            display: flex;
+
+        }
+
+        .aic {
+            align-items: center;
+        }
+
+        .jcc {
+            justify-content: center;
+        }
+
+        #thumb {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            font-size: 5rem;
+            outline: 2px solid red;
+            width: 50vw;
+        }
+
+
+        #thumb li:first-child::before {
+            content: '1';
+            vertical-align: -10px;
+        }
+        #thumb li:nth-child(2)::before {
+            content: '2';
+            vertical-align: -10px;
+        }
+        #thumb li:last-child::before {
+            content: '3';
+            vertical-align: -10px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="thumb" class="d-flex aic jcc">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>
