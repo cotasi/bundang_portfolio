@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            text-decoration: none;
+            color: black;
+            list-style: none;
+        }
+        #quick {
+            position: fixed;
+            top: 50%;
+            right:0;
+            transform: translateY(-50%);
+            width: 60px;
+            transition: all .4s;
+
+        }
+        #quick li {
+            width: 150px;
+            border:1px solid #ccc;
+            transition: all .4s;
+        }
+        #quick li a {
+            display: flex; /* 자식요소가 블럭화 됨 */
+            line-height: 3;
+        }
+        #quick i {
+            width: 60px;
+            white-space: nowrap; 
+            margin-right: 2rem;
+        }
+        #quick li:hover {
+            transform: translateX(calc(-100% + 60px));
+        }
+    </style>
+</head>
+<body>
+    <ul id="quick">
+        <li><a href="#"><i>집모양</i>퀵메뉴</a></li>
+        <li><a href="#"><i>페북</i>퀵메뉴</a></li>
+        <li><a href="#"><i>유튜브</i>퀵메뉴</a></li>
+    </ul>
+</body>
+</html>
