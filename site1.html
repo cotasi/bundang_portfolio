@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .jcb {
+            justify-content: space-between;
+        }
+
+        .jcc {
+            justify-content: center;
+        }
+
+        .aic {
+            align-items: center;
+        }
+
+        .rel {
+            position: relative;
+        }
+
+        .abs {
+            position: absolute;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            
+        }
+
+        #header .container {
+            background-color:mediumblue;
+        }
+
+        #header .container h1 {
+            height: 6rem;
+        }
+
+        #header .container h1 a {
+            display: inline-block;
+            line-height: 6rem;
+            padding: 0 2rem;
+        }
+
+        #header nav #gnb>li {
+            padding: 1rem 3rem;
+            background-color: rgb(0,0,0,.4);
+        }
+
+        #header nav #gnb>li>a {
+            white-space: nowrap;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        #header #gnb>li:hover {
+            background-color:rgb(0, 0, 255);
+        }
+
+        .smenu {
+            min-width: 186px;
+            left: 0;
+            top: 100%;
+            white-space: nowrap;
+            height: 0;
+            overflow: hidden;
+            transition: all .4s;
+            background-color: rgb(0,0,0,.4);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .smenu a {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem 0;
+        }
+
+        .smenu2,.smenu4 {
+            min-width: 166.41px;
+        }
+
+        #header #gnb>li:hover .smenu {
+            height: 10rem;
+        }
+
+        #header #gnb .smenu a:hover {
+            background-color: rgb(0,0,255,.4);
+        }
+
+        .slidebox {
+            height: 300px;
+            background-color: red;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .slidebox>div {
+            flex-shrink: 0;
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+        }
+        .slidebox .box {
+            width: 30%;
+            background-color: rgb(0,0,0,.4);
+            text-align: center;
+            padding:1rem 0;
+        }
+
+        .slidebox .box h1 {
+            font-size: 1.5rem;
+            margin-bottom: .2rem;
+        }
+
+        .slidebox .box h2 {
+            font-size: 1rem;
+        }
+
+        .slide1 {
+            left: 0;
+        }
+
+        .slide2 {
+            left: 100%;
+        }
+
+        .slide3 {
+            left: 200%;
+        }
+
+        .contentbox {
+            display: flex;
+        }
+
+        .contentbox>div {
+            flex: 1;
+        }
+
+        .contentbox a,
+        .contentbox div {
+            color: #000;
+        }
+
+        .wrapper {
+            width: 90%;
+            margin: 2rem auto;
+        }
+
+        .wrapper .menu>ul {
+            display: flex;
+        }
+        
+        .wrapper .menu>ul li:first-child {
+            padding-right: 1rem;
+        }
+
+        .wrapper .menu>ul li:last-child {
+            padding-left: 1rem;
+        }
+
+        .wrapper .menu>ul li:first-child::before {
+            content: '';
+            background-color: black;
+            display: inline-block;
+            width: 2px;
+            height: 21px;
+            position: absolute;
+            left: 100%;
+            bottom: 0;
+        }
+
+        .wrapper .menu>ul li:first-child a {
+            text-decoration: underline;
+        }
+
+        .wrapper .menu>ul li a {
+            font-size: 1.5rem;
+        }
+
+        .wrapper .menu {
+            margin-bottom: 1.5rem;
+        }
+
+        .wrapper .notice>ul>li {
+            padding: .3rem 0;
+        }
+
+        .content1 {
+            background-color:azure;
+        }
+
+        .gal {
+            display: none;
+        }
+
+        .content2 {
+            background-color: blue;
+        }
+
+        .content2 .center>div {
+            color: #fff;
+            font-size: 1.3rem;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        .content2 .center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+
+        .content2 .center button {
+            margin-top: .5rem;
+            border: none;
+            background-color: none;
+            background-color: rgb(0,0,0,.4);
+            padding: .7rem 1rem;
+            border-radius: 2rem;
+            font-size: .9rem;
+        }
+
+        .content3 {
+            background-color:darkorchid;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container d-flex jcb aic">
+            <h1><a href="#">강원천문대</a></h1>
+            <nav>
+                <ul id="gnb" class="d-flex">
+                    <li class="rel"><a href="#">강원천문대</a>
+                        <ul class="smenu smenu1 abs">
+                            <li><a href="#">천문대 소개</a></li>
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li class="rel"><a href="#">이용안내</a>
+                        <ul class="smenu smenu2 abs">
+                            <li><a href="#">프로그램</a></li>
+                            <li><a href="#">관람 시간표</a></li>
+                            <li><a href="#">이달의 별자리</a></li>
+                        </ul>
+                    </li>
+                    <li class="rel"><a href="#">천문대예약</a>
+                        <ul class="smenu smenu3 abs">
+                            <li><a href="#">예약하기</a></li>
+                            <li><a href="#">예약확인</a></li>
+                            <li><a href="#">예약시간</a></li>
+                        </ul>
+                    </li>
+                    <li class="rel"><a href="#">커뮤니티</a>
+                        <ul class="smenu smenu4 abs">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">방문후기</a></li>
+                            <li><a href="#">자유게시판</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+       <div class="container">
+            <section class="slidebox rel">
+                <div class="slide1 d-flex jcc aic abs">
+                    <div class="box">
+                        <h1>천문 과학 교육관 이용안내</h1>
+                        <h2>천문 과학 교육관으로 이동하세요!</h2>
+                    </div>
+                </div>
+                <div class="slide2 d-flex jcc aic abs">
+                    <div class="box">
+                        <h1>천문 과학 교육관 시설안내</h1>
+                        <h2>천문 과학 교육관으로 이동하세요!</h2>
+                    </div>
+                </div>
+                <div class="slide3 d-flex jcc aic abs">
+                    <div class="box">
+                        <h1>천문 과학 교육관 소개!</h1>
+                        <h2>천문 과학 교육관으로 이동하세요!</h2>
+                    </div>
+                </div>
+            </section>
+            <section class="contentbox">
+                <div class="content1">
+                    <div class="wrapper">
+                        <div class="menu">
+                            <ul>
+                                <li class="rel"><a href="#">공지사항</a></li>
+                                <li><a href="#">갤러리</a></li>
+                            </ul>
+                        </div>
+                        <div class="notice">
+                            <ul>
+                                <li>
+                                    <ul class="d-flex jcb">
+                                        <li><a href="#">강원 천문대 2023년 휴관일 안내</a></li>
+                                        <li><div>2023.05.24</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="d-flex jcb">
+                                        <li><a href="#">강원 천문대 2023년 온라인 예매 안내</a></li>
+                                        <li><div>2023.05.23</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="d-flex jcb">
+                                        <li><a href="#">강원 천문대 휴관일 및 이벤트 안내</a></li>
+                                        <li><div>2023.05.22</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="d-flex jcb">
+                                        <li><a href="#">강원 천문대 주차장 이용 및 숙박 안내</a></li>
+                                        <li><div>2023.05.21</div></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="gal">
+                            <ul>
+                                <li><a href=""><img src="" alt=""></a></li>
+                                <li><a href=""><img src="" alt=""></a></li>
+                                <li><a href=""><img src="" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content2 rel">
+                    <div class="center abs">
+                        <div>강원 천문대 온라인 예매하기</div>
+                        <button>예매하기</button>
+                    </div>
+                    
+                </div>
+                <div class="content3"></div>
+            </section>
+       </div>
+    </main>
+</body>
+</html>
