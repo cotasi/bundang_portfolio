@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artipia</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+            color: #333;
+        }
+        img {
+            vertical-align: top;
+        }
+        header {
+            border-bottom: 1px solid #ccc;
+        }
+        .d-flex {
+            display: flex;
+        }
+        .jcb {
+            justify-content: space-between;
+        }
+        .aic {
+            align-items: center;
+        }
+        .rel {
+            position: relative;
+        }
+        .abs {
+            position: absolute;
+        }
+        .container {
+            width: 1500px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+        }
+        .logo a {
+            display: inline-block;
+            height: 100%;
+        }
+        .logo a img {
+            height: 5rem;
+        }
+        nav>ul>li {
+            transition: all .4s;
+        }
+        nav>ul>li>a {
+            font-weight: bold;
+            padding: 1.25rem 3rem;
+            white-space: nowrap;
+            position: relative;
+        }
+        nav>ul>li>a::before {
+            content:'PERFORMANCE';
+            position: absolute;
+            top: 70%;
+            font-size: .5rem;
+            opacity: .4;
+        }
+
+        .smenu {
+            background-color: white;
+            top: 150%;
+            opacity: 0;
+            left: 30%;
+            border: 1px solid gray;
+            min-width: 100px;
+            padding: 10px;
+            transition: all .4s;
+        }
+        .smenu a {
+            line-height: 30px;
+        }
+        nav>ul>li:hover .smenu {
+            top: 200%;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container d-flex jcb aic">
+            <h1 class="logo"><a href="#"><img src="https://www.ssartpia.kr/images/common/logo_kr.svg" alt="logo"></a></h1>
+            <nav>
+                <ul class="d-flex">
+                    <li class="rel"><a href="#">공연</a>
+                        <ul class="smenu abs">
+                            <li><a href="#">기획공연</a></li>
+                            <li><a href="#">공연일정</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">전시</a></li>
+                    <li><a href="#">예술아카데미</a></li>
+                    <li><a href="#">대관안내</a></li>
+                    <li><a href="#">뉴스/소식</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">기관소개</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>
