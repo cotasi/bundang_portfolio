@@ -81,6 +81,7 @@ header#header {
 
     #gnb {
         >li {
+            transition: all .4s;
             >a {
                 line-height: 100px;
                 padding: 2.40625rem 2rem;
@@ -88,18 +89,29 @@ header#header {
 
             .smenu {
                 background-color: white;
-                border: 1px solid #ccc;
+                padding: 0 2rem;
                 line-height: 2;
                 white-space: nowrap;
                 min-width: 110px;
-                display: none;
+                overflow: hidden;
+                transition: all .5s;
+                height: 0;
+                border: 1px solid #ccc;
+                border-top: none;
             }
         }
 
         >li:hover {
+            z-index: 100;
+
+            >a {
+                color: red;
+            }
            .smenu {
-            display: block;
-            text-align: center;
+            display: block; 
+            top: 100%;
+            overflow: hidden;
+            height: 150px;
            }
         }
     }

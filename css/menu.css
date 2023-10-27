@@ -72,19 +72,34 @@ header#header h1 a {
 header#header h1 a img {
   height: 3rem;
 }
+header#header #gnb > li {
+  transition: all 0.4s;
+}
 header#header #gnb > li > a {
   line-height: 100px;
   padding: 2.40625rem 2rem;
 }
 header#header #gnb > li .smenu {
   background-color: white;
-  border: 1px solid #ccc;
+  padding: 0 2rem;
   line-height: 2;
   white-space: nowrap;
   min-width: 110px;
-  display: none;
+  overflow: hidden;
+  transition: all 0.5s;
+  height: 0;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+header#header #gnb > li:hover {
+  z-index: 100;
+}
+header#header #gnb > li:hover > a {
+  color: red;
 }
 header#header #gnb > li:hover .smenu {
   display: block;
-  text-align: center;
+  top: 100%;
+  overflow: hidden;
+  height: 150px;
 }
