@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            color: #333;
+        }
+
+  /*       body * {
+            outline: 1px solid red;
+        } */
+
+        #header {
+            background-color: #f3f3f3;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .jcb {
+            justify-content: space-between;
+        }
+
+        .aic {
+            align-items: center;
+        }
+
+        .aie {
+            align-items: end;
+        }
+
+        .rel {
+            position: relative;
+        }
+
+        .abs {
+            position: absolute;
+        }
+
+        .dn {
+            display: none;
+        }
+
+        .dl {
+            display: inline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container .logo {
+            height: 6rem;
+        }
+
+        .container .logo a {
+            padding: 1.65625rem 0;
+        }
+
+        .container #gnb>li>a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-weight: bold;
+        }
+
+        .container #gnb>li>a:hover {
+            background-color:antiquewhite;
+        }
+
+        .container #gnb>li .smenu a:hover {
+            background-color:bisque;
+            display: inline-block;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .smenu {
+            top: 100%;
+            height: 254px;
+            white-space: nowrap;
+            opacity: 0;
+            z-index: 9999;
+            width: 100%;
+            transition: all .4s;
+        }
+
+        .smenu li {
+            text-align: center;
+        }
+
+        .smenu a {
+            color: #f3f3f3;
+            width: 100%;
+            display: inline-block;
+            padding: 1rem 0;
+        }
+
+        .containerback {
+            display: block;
+            top: 6rem;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: rgba(0,0,0,.4);
+            z-index: 8999;
+            transition: all .4s;
+        }
+
+        .slidebox {
+            height: 15rem;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .slidebox>div {
+            width: 100%;
+            flex-shrink: 0;
+            transition: all .4s;
+        }
+
+        .slidebox .slide1 {
+            background: url('https://webstoryboy.github.io/webd2023/site/siteB/images/slider01.jpg') no-repeat center/cover;
+            height: 100%;
+            left: 0;
+        }
+
+        .slidebox .slide2 {
+            background: url('https://webstoryboy.github.io/webd2023/site/siteB/images/slider02.jpg') no-repeat center/cover;
+            height: 100%;
+            left: 100%;
+        }
+
+        .slidebox .slide3 {
+            background: url('https://webstoryboy.github.io/webd2023/site/siteB/images/slider03.jpg') no-repeat center/cover;
+            height: 100%;
+            left: 200%;
+        }
+
+        .slidebox>div .textwrap {
+            display: inline-block;
+            background-color: rgba(0,0,0,.4);
+            padding: 2rem 3rem;
+            margin: 2rem 3rem;
+        }
+
+        .textwrap h2 {
+            font-size: 2rem;
+            color: #f3f3f3;
+        }
+
+        .textwrap h2 span {
+            color:gold;
+        }
+        .textwrap p {
+            font-size: 1.4rem;
+            color: #f3f3f3;
+            padding-top: .5rem;
+        }
+
+        .content {
+            display: flex;
+            height: 13rem;
+        }
+
+        .content .con1 {
+            width: 400px;
+            background-color:blanchedalmond;
+        }
+
+        .content .wrapper {
+            padding: 1rem 1rem;
+        }
+
+        .content .con1 h2,
+        .content .con2 h2 {
+            padding: 1rem 0;
+        }
+
+        .content .con1 .text>ul>li {
+            padding-bottom: .5rem;
+        }
+
+        .content .con1 .text>ul>li:last-child {
+            padding-bottom: 0;
+        }
+
+        .content .con1 .text>ul>li>ul>li>a:hover {
+            text-decoration: underline;
+        }
+
+        .content .con1 .text>ul>li>ul>li>a::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            background-color: black;
+            border-radius: 50%;
+            vertical-align: 4px;
+            margin-right: 5px;
+        }
+
+        .content .con2 {
+            width: 400px;
+        }
+
+        .content .con2 .gal {
+            display: flex;
+            justify-content: center;
+        }
+
+        .content .con2 .gal>div {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .content .con2 .gal img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content .con2 .gal a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .content .con2 .gal .img1 {
+            margin-right: 1rem;
+        }
+
+        .content .con2 .gal .img3 {
+            margin-left: 1rem;
+        }
+
+        .content .con2 .gal a:hover {
+            filter:brightness(90%);
+        }
+
+        .content .con3 {
+            width: 400px;
+            background: url('https://webstoryboy.github.io/webd2023/site/siteB/images/banner.jpg') no-repeat center/cover;
+        }
+
+        .content .con3 span {
+            display: block;
+            padding-top: .3rem;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #f3f3f3;
+        }
+
+        .content .con3 p {
+            text-align: center;
+        }
+
+        .content .con3 .box {
+            text-align: center; 
+        }
+
+        .content .con3 .box button {
+            border: none;
+            background: none;
+            color: #f3f3f3;
+            background-color:coral;
+            padding: .8rem 1.6rem;
+            border-radius: 1.5rem;
+            font-size: .8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all .4s;
+        }
+
+        .content .con3 .box button:hover {
+            border-radius: 0;
+        }
+
+        footer {
+            background-color: #f3f3f3;
+            height: 10rem; 
+        }
+
+        footer .container {
+            height: 100%;
+        }
+
+        .inner {
+            height: 100%;
+        }
+
+        #footer {
+            padding-top: 1rem;
+        }
+
+        address {
+            font-style: normal;
+            bottom: 1rem;
+            display: inline-block;
+        }
+
+        .buttonwrap {
+            right: 0;
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+
+
+        .buttonwrap button {
+            width: 16rem;
+            background-color: white;
+            padding: .5rem 0;
+            border: 2px solid black;
+            border-radius: .1rem;
+            text-align: left;
+            padding-left: .4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .buttonwrap button>div {
+            display: inline-block;
+        }
+
+        .buttonwrap button::after {
+            content: '\F124';
+            font-family: bootstrap-icons !important;
+            position: absolute;
+            right: .4rem;
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+
+        .buttonwrap ul {
+            display: block;
+            height: 0;
+            overflow: hidden;
+            background-color: white;
+            width: 100%;
+            border: 2px solid black;
+            border-top: none;
+            border: none;
+            box-sizing: border-box;
+            transition: all .4s;
+        }
+
+        .buttonwrap ul li:first-child a{
+            display: block;
+            background-color: blue;
+            color: #f3f3f3;
+        }
+
+        #footer {
+            display: flex;
+        }
+
+        #footer li a {
+            display: inline-block;
+            padding-right: 1rem;
+            height: 100%;
+        }
+
+        #footer li a::after {
+            content: '';
+            display: inline-block;
+            width: .1rem;
+            height: 100%;
+            background-color: black;
+            position: absolute;
+        }
+
+        #footer li:last-child a::after {
+            display: none;
+        }
+
+        #footer li:first-child a::after {
+            left: 94%;
+            bottom: 0;
+        }
+
+        #footer li:nth-child(2) a::after {
+            left: 90%;
+            bottom: 0;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container d-flex jcb aie rel">
+            <h1 class="logo d-flex aic"><a href="#">산업대학교</a></h1>
+            <nav>
+                <ul id="gnb" class="d-flex">
+                    <li class="rel"><a href="#">대학소개</a>
+                        <ul class="smenu abs">
+                            <li><a href="#">총장인사말</a></li>
+                            <li><a href="#">학교소개</a></li>
+                            <li><a href="#">홍보관</a></li>
+                            <li><a href="#">캠퍼스 안내</a></li>
+                        </ul>
+                    </li>
+                    <li class="rel"><a href="#">입학안내</a>
+                        <ul class="smenu abs">
+                            <li><a href="#">수시모집</a></li>
+                            <li><a href="#">정시모집</a></li>
+                            <li><a href="#">편입학</a></li>
+                            <li><a href="#">재외국인</a></li>
+                        </ul>
+                    </li>
+                    <li class="rel"><a href="#">정보소개</a>
+                        <ul class="smenu abs">
+                            <li><a href="#">총장인사말</a></li>
+                            <li><a href="#">학교소개</a></li>
+                            <li><a href="#">홍보관</a></li>
+                            <li><a href="#">캠퍼스 안내</a></li>
+                        </ul>
+                    </li>
+                    <li class="rel"><a href="#">커뮤니티</a>
+                        <ul class="smenu abs">
+                            <li><a href="#">총장인사말</a></li>
+                            <li><a href="#">학교소개</a></li>
+                            <li><a href="#">홍보관</a></li>
+                            <li><a href="#">캠퍼스 안내</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="containerback abs"></div>
+        </div>
+    </header> 
+    <main>
+        <div class="container">
+            <section class="slidebox rel">
+                <div class="slide1 abs">
+                    <div class="textwrap">
+                        <h2>미래를 향한 <span>열정</span></h2>
+                        <p>산업대학교</p>
+                    </div>
+                </div>
+                <div class="slide2 abs">
+                    <div class="textwrap">
+                        <h2>당신을 위한 <span>교육</span></h2>
+                        <p>산업대학교</p>
+                    </div>
+                </div>
+                <div class="slide3 abs">
+                    <div class="textwrap">
+                        <h2>미래를 향한 우리의 <span>도전</span></h2>
+                        <p>산업대학교</p>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="con1">
+                    <div class="wrapper">
+                        <h2>산업대학교 새로운 소식</h2>
+                        <div class="text">
+                            <ul>
+                                <li>
+                                    <ul class="d-flex jcb">
+                                        <li><a href="#">2023년 신입생 모집중</a></li>
+                                        <li><div>2023.05.24</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="d-flex jcb">
+                                        <li><a href="#">융합 전공 멘토링 및 튜토링 학생 모집</a></li>
+                                        <li><div>2023.05.24</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="d-flex jcb">
+                                        <li><a href="#">학과 및 학년별 장기자랑 대회</a></li>
+                                        <li><div>2023.05.24</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="d-flex jcb">
+                                        <li><a href="#">미래 직업 워크숍 및 박람회</a></li>
+                                        <li><div>2023.05.24</div></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="con2">
+                    <div class="wrapper">
+                        <h2>우리 학교 풍경</h2>
+                        <div class="gal">
+                            <div class="img1">
+                                <a href="#">
+                                    <img src="https://webstoryboy.github.io/webd2023/site/siteB/images/gallery01.jpg" alt="img1">
+                                </a>     
+                            </div>
+                            <div class="img2">
+                                <a href="#">
+                                    <img src="https://webstoryboy.github.io/webd2023/site/siteB/images/gallery02.jpg" alt="img2">
+                                </a>          
+                            </div>
+                            <div class="img3">
+                                <a href="#">
+                                    <img src="https://webstoryboy.github.io/webd2023/site/siteB/images/gallery03.jpg" alt="img3">
+                                </a> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="con3">
+                    <div class="wrapper">
+                        <div class="box">
+                            <p>
+                                <span>산업대학교</span>
+                                <span>2023</span>
+                                <span>체육대전</span>
+                            </p>
+                            <button type="submit">바로가기</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="inner rel">
+                <ul id="footer">
+                    <li><a href="#" class="rel">개인정보처리방침</a></li>
+                    <li><a href="#" class="rel">정보공개</a></li>
+                    <li><a href="#">홈페이지 운영지침</a></li>
+                </ul>
+                <address class="abs">
+                    15073 경기도 안산시 산기대학로 237 (정왕동) 산업대학교 COPYRIGHT(C) ALL RIGHTS RESERVED.
+                </address>
+                <div class="buttonwrap abs">
+                    <button type="button" class="rel">
+                        <span class="dl dn">패밀리 사이트</span>
+                        <span class="dn">안양 산업대학교</span>
+                        <span class="dn">강원 산업대학교</span>
+                        <span class="dn">부산 산업대학교</span>
+                    </button>
+                    <ul class="abs">
+                        <li><a href="#">패밀리 사이트</a></li>
+                        <li><a href="#">안양 산업대학교</a></li>
+                        <li><a href="#">강원 산업대학교</a></li>
+                        <li><a href="#">부산 산업대학교</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll("#gnb>li").forEach((ele) => {
+            ele.addEventListener("mouseover",function(){
+                document.querySelector(".containerback").style.height = "254" + "px";
+                document.querySelectorAll(".smenu").forEach((ele) => {
+                    ele.style.opacity = "1";
+                })
+        });
+            ele.addEventListener("mouseout",function(){
+                document.querySelector(".containerback").style.height = "0" + "px";
+                document.querySelectorAll(".smenu").forEach((ele) => {
+                    ele.style.opacity = "0";
+                })
+            });
+        })
+
+        let currentcount = 0;
+        let sl = document.querySelectorAll(".slidebox>div");
+
+        setInterval(function(){
+            currentcount++;
+            sl.forEach((ele,idx) => {
+                sl[idx].style.left = currentcount * "-" * ("100" + "px");
+
+                if(currentcount == 3) {
+                    currentcount = 0;
+                }
+            });
+        },2000);
+
+        let select = document.querySelector(".buttonwrap>button");
+        let list = document.querySelector(".buttonwrap>ul");
+        let count = 0;
+
+        select.addEventListener("click",function() {
+            count++;
+            list.style.height = "100px";
+            list.style.border = "2px solid black";
+            list.style.borderTop = "none";
+
+            if(count == 2) {
+                count = 0;
+                list.style.height = "0";
+                list.style.border = "none";
+            }
+        });
+
+        let li = document.querySelectorAll(".buttonwrap>ul>li>a");
+        let span1 = document.querySelector(".buttonwrap>button>span:first-child");
+        let span2 = document.querySelector(".buttonwrap>button>span:nth-child(2)");
+        let span3 = document.querySelector(".buttonwrap>button>span:nth-child(3)");
+        let span4 = document.querySelector(".buttonwrap>button>span:last-child");
+
+        li.forEach((ele,idx) => {
+            li[idx].addEventListener("mouseover",function(){
+                ele.style.display = "block";
+                ele.style.backgroundColor = "blue";
+                ele.style.color = "#f3f3f3";
+            });
+
+            li[idx].addEventListener("mouseout",function(){
+                ele.style.backgroundColor = "transparent";
+                ele.style.color = "black";
+            });
+
+            li[idx].addEventListener("click",function(){
+                list.style.height = "0";
+                list.style.border = "none";
+
+                if(idx == 1) {
+                    span2.classList.add("dl");
+                    span1.classList.remove("dl");
+                }
+                else if(idx == 2) {
+                    span3.classList.add("dl");
+                    span2.classList.remove("dl");
+                }
+                else if(idx == 3) {
+                    span4.classList.add("dl");
+                    span3.classList.remove("dl");
+                } else if(idx == 0) {
+                    span4.classList.remove("dl");
+                    span1.classList.add("dl");
+                }
+            });
+        });
+
+        
+    </script>
+</body>
+</html>
