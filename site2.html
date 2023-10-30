@@ -545,10 +545,7 @@
                 </address>
                 <div class="buttonwrap abs">
                     <button type="button" class="rel">
-                        <span class="dl dn">패밀리 사이트</span>
-                        <span class="dn">안양 산업대학교</span>
-                        <span class="dn">강원 산업대학교</span>
-                        <span class="dn">부산 산업대학교</span>
+                        패밀리 사이트
                     </button>
                     <ul class="abs">
                         <li><a href="#">패밀리 사이트</a></li>
@@ -578,17 +575,28 @@
         })
 
         let currentcount = 0;
-        let sl = document.querySelectorAll(".slidebox>div");
+        let s1 = document.querySelector(".slidebox>.slide1");
+        let s2 = document.querySelector(".slidebox>.slide2");
+        let s3 = document.querySelector(".slidebox>.slide3");
 
         setInterval(function(){
-            currentcount++;
-            sl.forEach((ele,idx) => {
-                sl[idx].style.left = currentcount * "-" * ("100" + "px");
-
-                if(currentcount == 3) {
-                    currentcount = 0;
-                }
-            });
+            if(currentcount == 0) {
+                currentcount++;
+                s1.style.left = "-100" + "%";
+                s2.style.left = "0";
+                s3.style.left = "100" + "%";
+            } else if (currentcount == 1) {
+                currentcount++;
+                s1.style.left = "-200" + "%";
+                s2.style.left = "-100" + "%";
+                s3.style.left = "0" + "%";
+            } else if (currentcount == 2) {
+                currentcount = 0;
+                s1.style.left = "0";
+                s2.style.left = "100" + "%";
+                s3.style.left = "200" + "%";
+            }
+            
         },2000);
 
         let select = document.querySelector(".buttonwrap>button");
@@ -609,10 +617,7 @@
         });
 
         let li = document.querySelectorAll(".buttonwrap>ul>li>a");
-        let span1 = document.querySelector(".buttonwrap>button>span:first-child");
-        let span2 = document.querySelector(".buttonwrap>button>span:nth-child(2)");
-        let span3 = document.querySelector(".buttonwrap>button>span:nth-child(3)");
-        let span4 = document.querySelector(".buttonwrap>button>span:last-child");
+        let btns = document.querySelectorAll(".buttonwrap>button")
 
         li.forEach((ele,idx) => {
             li[idx].addEventListener("mouseover",function(){
@@ -627,25 +632,13 @@
             });
 
             li[idx].addEventListener("click",function(){
+                btns.forEach((ele,idx)=> {
+                    ele.innerText = li[idx];
+                });
                 list.style.height = "0";
                 list.style.border = "none";
-
-                if(idx == 1) {
-                    span2.classList.add("dl");
-                    span1.classList.remove("dl");
-                }
-                else if(idx == 2) {
-                    span3.classList.add("dl");
-                    span2.classList.remove("dl");
-                }
-                else if(idx == 3) {
-                    span4.classList.add("dl");
-                    span3.classList.remove("dl");
-                } else if(idx == 0) {
-                    span4.classList.remove("dl");
-                    span1.classList.add("dl");
-                }
             });
+
         });
 
         
